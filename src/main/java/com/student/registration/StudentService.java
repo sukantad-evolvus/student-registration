@@ -14,20 +14,20 @@ public class StudentService {
     return studentRepository.save(student);
   }
 
- public Student getStudentsById(int id)   {
+ public Student getStudentsById(long id)   {
   
 return studentRepository.findById(id).get();  
 } 
 
- public void update(Student students, int id){
+ public Student update(Student students){
   
-studentRepository.save(students);  
+	 Student s = studentRepository.save(students); 
+	 return s;
 }  
 
 
-  public void delete(int id){
-  
-studentRepository.deleteById(id);  
+  public void delete(long id){
+  studentRepository.deleteById(id);  
 }  
 
 }
